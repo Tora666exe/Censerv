@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — 30CENG.SRV</title>
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <canvas id="pixelCanvas"></canvas>
+
+  <nav class="navbar">
+    <div class="nav-logo">
+      <span class="pixel-char">►</span>
+      <span class="logo-text">30CENG<span class="accent">.SRV</span></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a href="services.html">⚔️ Services</a></li>
+      <li><a href="portfolio.html">🎮 Portfolio</a></li>
+      <li><a href="about.html">👾 About</a></li>
+      <li><a href="contact.html" class="active nav-cta">📞 Contact</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <section class="page-header">
+    <div class="page-header-deco">📞 📬 💬</div>
+    <div class="pixel-badge">PLAYER COMMUNICATION</div>
+    <h1>CONTACT <span class="accent">US</span></h1>
+    <p>Kami siap membantu! Hubungi kami melalui salah satu platform di bawah</p>
+  </section>
+
+  <!-- CONTACT MAIN -->
+  <section class="contact-section">
+    <div class="contact-wrapper">
+
+      <!-- CONTACT CARDS -->
+      <div class="contact-channels">
+        <h2>📡 REACH <span class="accent">US</span></h2>
+        <p class="contact-sub">Pilih platform favorit kamu untuk menghubungi kami:</p>
+
+        <div class="contact-cards">
+          <a href="https://wa.me/6287726411406" target="_blank" class="contact-card wa">
+            <div class="cc-icon">💬</div>
+            <div class="cc-info">
+              <div class="cc-name">WhatsApp</div>
+              <div class="cc-handle">+62 877-2641-1406</div>
+              <div class="cc-desc">Respon cepat! Hubungi untuk konsultasi & order</div>
+            </div>
+            <div class="cc-arrow">▶</div>
+          </a>
+
+          <a href="https://t.me/iieellv" target="_blank" class="contact-card tg">
+            <div class="cc-icon">✈️</div>
+            <div class="cc-info">
+              <div class="cc-name">Telegram</div>
+              <div class="cc-handle">@iieellv</div>
+              <div class="cc-desc">Alternatif komunikasi yang cepat & aman</div>
+            </div>
+            <div class="cc-arrow">▶</div>
+          </a>
+
+          <a href="https://instagram.com/ellteerp_" target="_blank" class="contact-card ig">
+            <div class="cc-icon">📸</div>
+            <div class="cc-info">
+              <div class="cc-name">Instagram</div>
+              <div class="cc-handle">@ellteerp_</div>
+              <div class="cc-desc">Lihat project & update terbaru kami</div>
+            </div>
+            <div class="cc-arrow">▶</div>
+          </a>
+
+          <a href="https://instagram.com/30ceng.srv" target="_blank" class="contact-card ig2">
+            <div class="cc-icon">📸</div>
+            <div class="cc-info">
+              <div class="cc-name">Instagram (Official)</div>
+              <div class="cc-handle">@30ceng.srv</div>
+              <div class="cc-desc">Akun resmi layanan & portofolio</div>
+            </div>
+            <div class="cc-arrow">▶</div>
+          </a>
+
+          <div class="contact-card dc">
+            <div class="cc-icon">🎮</div>
+            <div class="cc-info">
+              <div class="cc-name">Discord</div>
+              <div class="cc-handle">eelldisiniii</div>
+              <div class="cc-desc">DM untuk diskusi panjang & detail project</div>
+            </div>
+            <div class="cc-copy" onclick="copyToClipboard('eelldisiniii', this)">📋 Copy</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- INQUIRY FORM -->
+      <div class="inquiry-form">
+        <h2>📋 QUICK <span class="accent">INQUIRY</span></h2>
+        <p class="contact-sub">Isi form ini dan kami akan menghubungi kamu sesegera mungkin!</p>
+
+        <div class="form-wrapper">
+          <div class="form-group">
+            <label class="form-label">👤 NAMA KAMU</label>
+            <input type="text" class="form-input" placeholder="Masukkan nama kamu..." id="fName" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">📱 WHATSAPP / TELEGRAM</label>
+            <input type="text" class="form-input" placeholder="No. WA atau username TG..." id="fContact" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">⚔️ JASA YANG DIINGINKAN</label>
+            <div class="form-select-group" id="serviceSelect">
+              <div class="select-option" data-value="webdev" onclick="toggleOption(this)">🌐 Web Development</div>
+              <div class="select-option" data-value="pentest" onclick="toggleOption(this)">🔒 Pentest Web</div>
+              <div class="select-option" data-value="bot-tele" onclick="toggleOption(this)">✈️ Bot Telegram</div>
+              <div class="select-option" data-value="bot-dc" onclick="toggleOption(this)">🎮 Bot Discord</div>
+              <div class="select-option" data-value="bot-web" onclick="toggleOption(this)">🌐 Bot Web Apps</div>
+              <div class="select-option" data-value="discord" onclick="toggleOption(this)">🎮 Discord Setup</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">💬 KETERANGAN / DETAIL PROJECT</label>
+            <textarea class="form-input form-textarea" placeholder="Ceritakan kebutuhan kamu di sini... Semakin detail semakin baik!" id="fDesc"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">💰 ESTIMASI BUDGET</label>
+            <div class="form-select-group" id="budgetSelect">
+              <div class="select-option" data-value="50-150k" onclick="selectBudget(this)">< Rp 150K</div>
+              <div class="select-option" data-value="150-500k" onclick="selectBudget(this)">Rp 150K - 500K</div>
+              <div class="select-option" data-value="500k-1jt" onclick="selectBudget(this)">Rp 500K - 1JT</div>
+              <div class="select-option" data-value="1jt+" onclick="selectBudget(this)">> Rp 1JT</div>
+              <div class="select-option" data-value="diskusi" onclick="selectBudget(this)">💬 Mau Diskusi</div>
+            </div>
+          </div>
+
+          <button class="btn-pixel btn-primary submit-btn" onclick="submitInquiry()">
+            📨 Kirim via WhatsApp ▶
+          </button>
+
+          <p class="form-note">* Form ini akan membuka WhatsApp dengan pesan yang sudah terisi otomatis</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="faq-section">
+    <div class="section-header">
+      <h2>❓ FAQ — <span class="accent">PERTANYAAN UMUM</span></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>Berapa lama pengerjaan website?</span>
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-a">
+          Tergantung kompleksitas. Landing page: 2-5 hari. Company profile: 5-10 hari. E-commerce / aplikasi web: 2-4 minggu. Bisa didiskusikan sesuai deadline kamu.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>Apakah ada garansi revisi?</span>
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-a">
+          Ya! Kami memberikan garansi revisi sesuai kesepakatan di awal. Biasanya 2-3x revisi untuk memastikan kamu puas dengan hasilnya.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>Bagaimana sistem pembayaran?</span>
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-a">
+          DP 50% di awal, sisa 50% setelah project selesai dan kamu puas. Bisa transfer bank, e-wallet (Dana, GoPay, OVO), atau QRIS.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>Apakah bisa minta harga khusus untuk mahasiswa?</span>
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-a">
+          Tentu! Kami punya program harga khusus untuk mahasiswa, terutama untuk kebutuhan skripsi/tugas akhir. Hubungi kami dan tunjukkan KTM kamu!
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>WhatsApp Bot sudah tersedia?</span>
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-a">
+          WhatsApp Bot masih dalam tahap pengembangan. Untuk saat ini kami melayani bot Telegram, Discord, dan Web Apps. Kamu bisa daftar waitlist untuk WA Bot via WA/TG kami!
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-logo">30CENG<span class="accent">.SRV</span></div>
+    <p class="footer-tagline">// Building Digital Worlds, One Pixel at a Time //</p>
+    <div class="footer-socials">
+      <a href="https://wa.me/6287726411406" target="_blank" class="social-btn">📱 WA</a>
+      <a href="https://t.me/iieellv" target="_blank" class="social-btn">✈️ TG</a>
+      <a href="https://instagram.com/ellteerp_" target="_blank" class="social-btn">📸 IG</a>
+      <a href="https://instagram.com/30ceng.srv" target="_blank" class="social-btn">📸 IG2</a>
+      <a href="#" class="social-btn">🎮 DC</a>
+    </div>
+    <p class="footer-copy">© 2025 30CENG.SRV — All Rights Reserved | Made with ❤️ & ☕</p>
+  </footer>
+
+  <div id="toast" class="toast">✅ Copied to clipboard!</div>
+
+  <script src="js/global.js"></script>
+  <script src="js/contact.js"></script>
+</body>
+</html>

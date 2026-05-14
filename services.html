@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — 30CENG.SRV</title>
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/services.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <canvas id="pixelCanvas"></canvas>
+  <div class="floating-coins" id="floatingCoins"></div>
+
+  <nav class="navbar">
+    <div class="nav-logo">
+      <span class="pixel-char">►</span>
+      <span class="logo-text">30CENG<span class="accent">.SRV</span></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a href="services.html" class="active">⚔️ Services</a></li>
+      <li><a href="portfolio.html">🎮 Portfolio</a></li>
+      <li><a href="about.html">👾 About</a></li>
+      <li><a href="contact.html" class="nav-cta">📞 Contact</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="page-header-deco">
+      <span>⚔️</span><span>🔱</span><span>⚔️</span>
+    </div>
+    <div class="pixel-badge">SELECT YOUR QUEST</div>
+    <h1>OUR <span class="accent">SERVICES</span></h1>
+    <p>Semua yang kamu butuhkan untuk kehadiran digital yang kuat</p>
+  </section>
+
+  <!-- SERVICE: WEB DEV -->
+  <section class="service-section" id="webdev">
+    <div class="service-label label-blue">QUEST 01</div>
+    <div class="service-main">
+      <div class="service-info">
+        <div class="service-bigicon">🌐</div>
+        <h2>Web <span class="accent">Development</span></h2>
+        <p class="service-desc">Kami membangun website yang tidak hanya cantik, tapi juga fungsional dan cepat. Dari landing page sederhana sampai aplikasi web kompleks.</p>
+        <div class="service-features">
+          <div class="feature-item">
+            <span class="feat-icon">✅</span>
+            <div>
+              <strong>Company Profile</strong>
+              <p>Tampilkan bisnis kamu secara profesional online</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feat-icon">✅</span>
+            <div>
+              <strong>Toko Online / E-Commerce</strong>
+              <p>Jual produk 24/7 dengan sistem yang lengkap</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feat-icon">✅</span>
+            <div>
+              <strong>Landing Page</strong>
+              <p>Halaman promosi yang mengkonversi pengunjung</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feat-icon">✅</span>
+            <div>
+              <strong>Sistem/Aplikasi Web</strong>
+              <p>Aplikasi custom sesuai kebutuhan bisnis</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feat-icon">✅</span>
+            <div>
+              <strong>Website Skripsi/TA</strong>
+              <p>Khusus mahasiswa, harga terjangkau & cepat</p>
+            </div>
+          </div>
+        </div>
+        <div class="service-stack">
+          <span>HTML/CSS</span><span>JavaScript</span><span>React</span>
+          <span>Laravel</span><span>PHP</span><span>MySQL</span>
+        </div>
+        <a href="contact.html" class="btn-pixel btn-primary">Order Sekarang ▶</a>
+      </div>
+      <div class="service-visual visual-blue">
+        <div class="code-window">
+          <div class="code-titlebar">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="code-filename">project.js</span>
+          </div>
+          <pre class="code-content"><span class="c-blue">const</span> <span class="c-white">website</span> <span class="c-blue">=</span> {
+  <span class="c-green">name</span>: <span class="c-yellow">"YourBusiness"</span>,
+  <span class="c-green">type</span>: <span class="c-yellow">"company_profile"</span>,
+  <span class="c-green">pages</span>: [<span class="c-yellow">"home"</span>, <span class="c-yellow">"about"</span>,
+         <span class="c-yellow">"services"</span>, <span class="c-yellow">"contact"</span>],
+  <span class="c-green">responsive</span>: <span class="c-blue">true</span>,
+  <span class="c-green">seo</span>: <span class="c-blue">true</span>,
+  <span class="c-green">speed</span>: <span class="c-yellow">"⚡ blazing fast"</span>
+};
+
+<span class="c-blue">await</span> <span class="c-white">deploy</span>(website)
+  .<span class="c-green">then</span>(<span class="c-white">result</span> <span class="c-blue">=></span> 
+    console.<span class="c-green">log</span>(<span class="c-yellow">"🚀 LIVE!"</span>)
+  );</pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE: PENTEST -->
+  <section class="service-section alt" id="pentest">
+    <div class="service-label label-red">QUEST 02</div>
+    <div class="service-main reverse">
+      <div class="service-visual visual-red">
+        <div class="terminal-window">
+          <div class="terminal-bar">
+            <span class="t-dot"></span><span class="t-dot"></span><span class="t-dot"></span>
+            <span class="t-title">pentest_report.sh</span>
+          </div>
+          <div class="terminal-body">
+            <p><span class="t-green">$</span> <span class="t-white">./scan --target yoursite.com</span></p>
+            <p><span class="t-yellow">[*] Starting reconnaissance...</span></p>
+            <p><span class="t-green">[+] Open ports found: 80, 443</span></p>
+            <p><span class="t-yellow">[*] Testing OWASP Top 10...</span></p>
+            <p><span class="t-red">[!] SQL Injection found at /api/user</span></p>
+            <p><span class="t-yellow">[*] Testing XSS vectors...</span></p>
+            <p><span class="t-green">[+] No XSS vulnerabilities found</span></p>
+            <p><span class="t-yellow">[*] Generating report...</span></p>
+            <p><span class="t-green">[✓] Report saved: report_2025.pdf</span></p>
+            <span class="cursor-blink">█</span>
+          </div>
+        </div>
+      </div>
+      <div class="service-info">
+        <div class="service-bigicon">🔒</div>
+        <h2>Penetration <span class="accent">Testing</span></h2>
+        <p class="service-desc">Temukan celah keamanan di website kamu sebelum hacker yang menemukannya. Kami melakukan pengujian menyeluruh dan memberikan laporan detail.</p>
+        <div class="service-features">
+          <div class="feature-item">
+            <span class="feat-icon">🔍</span>
+            <div>
+              <strong>OWASP Top 10 Testing</strong>
+              <p>SQL Injection, XSS, CSRF, dan lainnya</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feat-icon">📊</span>
+            <div>
+              <strong>Laporan Detail</strong>
+              <p>Temuan, risk level, bukti screenshot, rekomendasi</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feat-icon">🛡️</span>
+            <div>
+              <strong>Rekomendasi Perbaikan</strong>
+              <p>Panduan lengkap cara memperbaiki setiap temuan</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feat-icon">🔄</span>
+            <div>
+              <strong>Re-test (opsional)</strong>
+              <p>Verifikasi setelah perbaikan dilakukan</p>
+            </div>
+          </div>
+        </div>
+        <div class="warning-box">
+          ⚠️ Jasa ini hanya untuk website yang kamu miliki. Kami tidak bertanggung jawab atas penyalahgunaan.
+        </div>
+        <a href="contact.html" class="btn-pixel btn-primary">Order Sekarang ▶</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE: BOT -->
+  <section class="service-section" id="bot">
+    <div class="service-label label-green">QUEST 03</div>
+    <div class="service-main">
+      <div class="service-info">
+        <div class="service-bigicon">🤖</div>
+        <h2>Bot <span class="accent">Maker</span></h2>
+        <p class="service-desc">Automasi pekerjaan repetitif kamu dengan bot yang cerdas. Fokus ke hal yang lebih penting, biarkan bot yang bekerja!</p>
+        <div class="bot-cards">
+          <div class="bot-card available">
+            <div class="bot-platform">✈️ Telegram Bot</div>
+            <div class="bot-status status-on">● TERSEDIA</div>
+            <p>Bot notifikasi, menu interaktif, admin panel, integrasi API</p>
+          </div>
+          <div class="bot-card available">
+            <div class="bot-platform">🎮 Discord Bot</div>
+            <div class="bot-status status-on">● TERSEDIA</div>
+            <p>Moderasi, musik, level system, welcome message, custom commands</p>
+          </div>
+          <div class="bot-card available">
+            <div class="bot-platform">🌐 Web Apps Bot</div>
+            <div class="bot-status status-on">● TERSEDIA</div>
+            <p>Automasi web, scraper, form filler, scheduler, dashboard</p>
+          </div>
+          <div class="bot-card dev">
+            <div class="bot-platform">💬 WhatsApp Bot</div>
+            <div class="bot-status status-dev">⚙️ DALAM PENGEMBANGAN</div>
+            <p>Coming soon! Auto reply, broadcast, customer service bot</p>
+          </div>
+        </div>
+        <a href="contact.html" class="btn-pixel btn-primary">Order Sekarang ▶</a>
+      </div>
+      <div class="service-visual visual-green">
+        <div class="bot-demo">
+          <div class="demo-header">🤖 Bot Preview</div>
+          <div class="demo-chat">
+            <div class="chat-msg bot-msg">
+              <span>🤖</span> Halo! Selamat datang di Bot 30CENG.SRV
+            </div>
+            <div class="chat-msg bot-msg">
+              Pilih menu: <br>
+              [1] 📦 Cek Produk<br>
+              [2] 💰 Cek Harga<br>
+              [3] 📞 Hubungi Admin<br>
+              [4] ❓ FAQ
+            </div>
+            <div class="chat-msg user-msg">
+              <span>👤</span> 1
+            </div>
+            <div class="chat-msg bot-msg">
+              <span>🤖</span> Berikut produk kami... <span class="typing">▋</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE: DISCORD -->
+  <section class="service-section alt" id="discord">
+    <div class="service-label label-yellow">QUEST 04</div>
+    <div class="service-main reverse">
+      <div class="service-visual visual-yellow">
+        <div class="discord-preview">
+          <div class="dc-header">🎮 YourServer • #general</div>
+          <div class="dc-sidebar">
+            <div class="dc-category">📢 ANNOUNCEMENT</div>
+            <div class="dc-channel active"># rules</div>
+            <div class="dc-channel"># welcome</div>
+            <div class="dc-category">💬 GENERAL</div>
+            <div class="dc-channel active"># general</div>
+            <div class="dc-channel"># off-topic</div>
+            <div class="dc-category">🎫 SUPPORT</div>
+            <div class="dc-channel"># open-ticket</div>
+          </div>
+        </div>
+      </div>
+      <div class="service-info">
+        <div class="service-bigicon">🎮</div>
+        <h2>Discord <span class="accent">Setup</span></h2>
+        <p class="service-desc">Server Discord yang profesional dan terstruktur untuk komunitas atau bisnis kamu. Dari setup dasar sampai server kompleks dengan bot terintegrasi.</p>
+        <div class="service-features">
+          <div class="feature-item">
+            <span class="feat-icon">🏗️</span>
+            <div>
+              <strong>Struktur Channel</strong>
+              <p>Kategori & channel yang rapi dan terorganisir</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feat-icon">🎭</span>
+            <div>
+              <strong>Role System</strong>
+              <p>Level, badge, dan permission yang terstruktur</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feat-icon">🤖</span>
+            <div>
+              <strong>Bot Integration</strong>
+              <p>MEE6, Carl-bot, dan bot custom</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feat-icon">🎨</span>
+            <div>
+              <strong>Custom Branding</strong>
+              <p>Icon, banner, dan embed sesuai brand kamu</p>
+            </div>
+          </div>
+        </div>
+        <a href="contact.html" class="btn-pixel btn-primary">Order Sekarang ▶</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING HINT -->
+  <section class="pricing-hint">
+    <h2>💬 BUTUH <span class="accent">HARGA PASTI?</span></h2>
+    <p>Setiap proyek unik! Hubungi kami untuk konsultasi gratis dan penawaran yang sesuai budget kamu.</p>
+    <div class="price-badges">
+      <span class="price-badge">🎓 Harga Khusus Mahasiswa</span>
+      <span class="price-badge">🏪 Paket UMKM</span>
+      <span class="price-badge">💬 Konsultasi Gratis</span>
+    </div>
+    <a href="contact.html" class="btn-pixel btn-primary">Tanya Sekarang ▶</a>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-logo">30CENG<span class="accent">.SRV</span></div>
+    <p class="footer-tagline">// Building Digital Worlds, One Pixel at a Time //</p>
+    <div class="footer-socials">
+      <a href="https://wa.me/6287726411406" target="_blank" class="social-btn">📱 WA</a>
+      <a href="https://t.me/iieellv" target="_blank" class="social-btn">✈️ TG</a>
+      <a href="https://instagram.com/ellteerp_" target="_blank" class="social-btn">📸 IG</a>
+      <a href="https://instagram.com/30ceng.srv" target="_blank" class="social-btn">📸 IG2</a>
+      <a href="#" class="social-btn">🎮 DC</a>
+    </div>
+    <div class="footer-nav">
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <p class="footer-copy">© 2025 30CENG.SRV — All Rights Reserved | Made with ❤️ & ☕</p>
+  </footer>
+
+  <script src="js/global.js"></script>
+</body>
+</html>

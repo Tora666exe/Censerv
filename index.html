@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>30CENG.SRV — Digital Services</title>
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/index.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323:wght@400&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Pixel Rain Background -->
+  <canvas id="pixelCanvas"></canvas>
+
+  <!-- Floating Coins -->
+  <div class="floating-coins" id="floatingCoins"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      <span class="pixel-char">►</span>
+      <span class="logo-text">30CENG<span class="accent">.SRV</span></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">🏠 Home</a></li>
+      <li><a href="services.html">⚔️ Services</a></li>
+      <li><a href="portfolio.html">🎮 Portfolio</a></li>
+      <li><a href="about.html">👾 About</a></li>
+      <li><a href="contact.html" class="nav-cta">📞 Contact</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-cloud cloud-1">☁️</div>
+    <div class="hero-cloud cloud-2">☁️</div>
+    <div class="hero-cloud cloud-3">☁️</div>
+
+    <div class="hero-content">
+      <div class="pixel-badge">LEVEL 1 — START</div>
+      <h1 class="hero-title">
+        <span class="line1">WE BUILD</span>
+        <span class="line2">DIGITAL</span>
+        <span class="line3"><span class="glitch" data-text="WORLDS">WORLDS</span></span>
+      </h1>
+      <p class="hero-sub">Web Dev · Pentest · Bot Maker · Discord Setup</p>
+      <p class="hero-desc">Solusi digital untuk Mahasiswa & UMKM. Harga terjangkau, kualitas terbaik!</p>
+      <div class="hero-btns">
+        <a href="services.html" class="btn-pixel btn-primary">
+          <span class="btn-icon">⚔️</span> Lihat Jasa
+        </a>
+        <a href="contact.html" class="btn-pixel btn-secondary">
+          <span class="btn-icon">💬</span> Hubungi Kami
+        </a>
+      </div>
+    </div>
+
+    <!-- Pixel Character -->
+    <div class="hero-character">
+      <div class="pixel-mario" id="pixelMario">
+        <div class="mario-sprite">
+          <div class="mario-row">⬛🔴🔴🔴🔴🔴⬛</div>
+          <div class="mario-row">⬛🔴🔴🔴🔴🔴🔴🔴⬛</div>
+          <div class="mario-row">⬛⬛🟫🔴🔴🟫⬛</div>
+          <div class="mario-row">🔴🔴🔴🔴🔴🔴🔴</div>
+          <div class="mario-row">🔴🔵🔵🔵🔵🔵🔴</div>
+          <div class="mario-row">🔴🔵🔵🔵🔵🔵🔴</div>
+          <div class="mario-row">⬛🔴⬛⬛🔴⬛</div>
+          <div class="mario-row">🟫🟫⬛⬛🟫🟫</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ground -->
+    <div class="hero-ground">
+      <div class="ground-blocks">
+        <span class="ground-block">?</span>
+        <span class="ground-block solid"></span>
+        <span class="ground-block solid"></span>
+        <span class="ground-block">?</span>
+        <span class="ground-block solid"></span>
+        <span class="ground-block coin-block">$</span>
+        <span class="ground-block solid"></span>
+        <span class="ground-block">?</span>
+        <span class="ground-block solid"></span>
+        <span class="ground-block solid"></span>
+        <span class="ground-block">?</span>
+        <span class="ground-block coin-block">$</span>
+        <span class="ground-block solid"></span>
+        <span class="ground-block">?</span>
+      </div>
+      <div class="ground-line"></div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <section class="stats-bar">
+    <div class="stat-item">
+      <span class="stat-icon">🎯</span>
+      <span class="stat-num" data-target="50">0</span><span>+</span>
+      <span class="stat-label">Projects Done</span>
+    </div>
+    <div class="stat-divider">|</div>
+    <div class="stat-item">
+      <span class="stat-icon">😊</span>
+      <span class="stat-num" data-target="40">0</span><span>+</span>
+      <span class="stat-label">Happy Clients</span>
+    </div>
+    <div class="stat-divider">|</div>
+    <div class="stat-item">
+      <span class="stat-icon">⚡</span>
+      <span class="stat-num" data-target="3">0</span><span>+</span>
+      <span class="stat-label">Years Exp</span>
+    </div>
+    <div class="stat-divider">|</div>
+    <div class="stat-item">
+      <span class="stat-icon">🔥</span>
+      <span class="stat-num" data-target="100">0</span><span>%</span>
+      <span class="stat-label">Commitment</span>
+    </div>
+  </section>
+
+  <!-- SERVICES PREVIEW -->
+  <section class="services-preview">
+    <div class="section-header">
+      <div class="pixel-pipe">🌵</div>
+      <h2>SELECT YOUR <span class="accent">QUEST</span></h2>
+      <p>Pilih jasa yang kamu butuhkan, kami siap bantu!</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card" data-color="blue">
+        <div class="card-icon">🌐</div>
+        <div class="card-level">QUEST 01</div>
+        <h3>Web Development</h3>
+        <p>Website company profile, toko online, landing page, dan aplikasi web custom untuk UMKM & mahasiswa.</p>
+        <div class="card-tags">
+          <span>HTML/CSS</span><span>React</span><span>Laravel</span>
+        </div>
+        <a href="services.html#webdev" class="card-btn">Explore ▶</a>
+      </div>
+      <div class="service-card" data-color="red">
+        <div class="card-icon">🔒</div>
+        <div class="card-level">QUEST 02</div>
+        <h3>Pentest Web</h3>
+        <p>Uji keamanan website kamu dari ancaman hacker. Laporan lengkap & rekomendasi perbaikan.</p>
+        <div class="card-tags">
+          <span>OWASP</span><span>Burp Suite</span><span>Report</span>
+        </div>
+        <a href="services.html#pentest" class="card-btn">Explore ▶</a>
+      </div>
+      <div class="service-card" data-color="green">
+        <div class="card-icon">🤖</div>
+        <div class="card-level">QUEST 03</div>
+        <h3>Bot Maker</h3>
+        <p>Bot Telegram, Discord, Web Apps, & WhatsApp (coming soon). Automasi bisnis kamu sekarang!</p>
+        <div class="card-tags">
+          <span>Telegram</span><span>Discord</span><span>WA*</span>
+        </div>
+        <a href="services.html#bot" class="card-btn">Explore ▶</a>
+      </div>
+      <div class="service-card" data-color="yellow">
+        <div class="card-icon">🎮</div>
+        <div class="card-level">QUEST 04</div>
+        <h3>Discord Setup</h3>
+        <p>Setup server Discord profesional, bot moderasi, role system, channel struktur untuk komunitas & bisnis.</p>
+        <div class="card-tags">
+          <span>Server</span><span>Bots</span><span>Roles</span>
+        </div>
+        <a href="services.html#discord" class="card-btn">Explore ▶</a>
+      </div>
+    </div>
+    <div class="services-cta">
+      <a href="services.html" class="btn-pixel btn-primary">Lihat Semua Jasa ▶▶</a>
+    </div>
+  </section>
+
+  <!-- TARGET SECTION -->
+  <section class="target-section">
+    <div class="target-bg-deco"></div>
+    <div class="section-header">
+      <h2>WHO ARE <span class="accent">YOU?</span></h2>
+      <p>Kami melayani siapa saja, tapi fokus untuk:</p>
+    </div>
+    <div class="target-cards">
+      <div class="target-card">
+        <div class="target-sprite">🎓</div>
+        <h3>Mahasiswa</h3>
+        <ul>
+          <li>✅ Tugas Akhir / Skripsi berbasis web</li>
+          <li>✅ Project kuliah & lomba</li>
+          <li>✅ Portofolio personal</li>
+          <li>✅ Bot untuk keperluan organisasi</li>
+        </ul>
+        <div class="target-price">Mulai dari Rp 50.000</div>
+      </div>
+      <div class="target-card featured">
+        <div class="target-badge">⭐ POPULAR</div>
+        <div class="target-sprite">🏪</div>
+        <h3>UMKM</h3>
+        <ul>
+          <li>✅ Website toko online & profil usaha</li>
+          <li>✅ Automasi WhatsApp & Telegram</li>
+          <li>✅ Keamanan website bisnis</li>
+          <li>✅ Komunitas Discord pelanggan</li>
+        </ul>
+        <div class="target-price">Mulai dari Rp 150.000</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="cta-section">
+    <div class="cta-coins">
+      <span>🪙</span><span>🪙</span><span>🪙</span>
+    </div>
+    <h2>READY TO <span class="accent">LEVEL UP?</span></h2>
+    <p>Konsultasi gratis! Hubungi kami sekarang dan wujudkan ide digitalmu.</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/6287726411406" target="_blank" class="btn-pixel btn-wa">
+        <span>💬</span> WhatsApp Sekarang
+      </a>
+      <a href="contact.html" class="btn-pixel btn-secondary">
+        <span>📋</span> Form Konsultasi
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-logo">30CENG<span class="accent">.SRV</span></div>
+    <p class="footer-tagline">// Building Digital Worlds, One Pixel at a Time //</p>
+    <div class="footer-socials">
+      <a href="https://wa.me/6287726411406" target="_blank" class="social-btn">📱 WA</a>
+      <a href="https://t.me/iieellv" target="_blank" class="social-btn">✈️ TG</a>
+      <a href="https://instagram.com/ellteerp_" target="_blank" class="social-btn">📸 IG</a>
+      <a href="https://instagram.com/30ceng.srv" target="_blank" class="social-btn">📸 IG2</a>
+      <a href="#" class="social-btn">🎮 DC</a>
+    </div>
+    <div class="footer-nav">
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <p class="footer-copy">© 2025 30CENG.SRV — All Rights Reserved | Made with ❤️ & ☕</p>
+  </footer>
+
+  <script src="js/global.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>

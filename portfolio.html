@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — 30CENG.SRV</title>
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/portfolio.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <canvas id="pixelCanvas"></canvas>
+
+  <nav class="navbar">
+    <div class="nav-logo">
+      <span class="pixel-char">►</span>
+      <span class="logo-text">30CENG<span class="accent">.SRV</span></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a href="services.html">⚔️ Services</a></li>
+      <li><a href="portfolio.html" class="active">🎮 Portfolio</a></li>
+      <li><a href="about.html">👾 About</a></li>
+      <li><a href="contact.html" class="nav-cta">📞 Contact</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <section class="page-header">
+    <div class="page-header-deco">🎮 🕹️ 🎮</div>
+    <div class="pixel-badge">ACHIEVEMENT UNLOCKED</div>
+    <h1>OUR <span class="accent">PORTFOLIO</span></h1>
+    <p>Beberapa karya terbaik yang pernah kami kerjakan</p>
+  </section>
+
+  <!-- FILTER -->
+  <section class="portfolio-section">
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterPortfolio('all', this)">🎯 Semua</button>
+      <button class="filter-btn" onclick="filterPortfolio('web', this)">🌐 Web Dev</button>
+      <button class="filter-btn" onclick="filterPortfolio('pentest', this)">🔒 Pentest</button>
+      <button class="filter-btn" onclick="filterPortfolio('bot', this)">🤖 Bot</button>
+      <button class="filter-btn" onclick="filterPortfolio('discord', this)">🎮 Discord</button>
+    </div>
+
+    <div class="portfolio-grid" id="portfolioGrid">
+      <!-- WEB PROJECTS -->
+      <div class="port-card" data-cat="web">
+        <div class="port-preview web-preview">
+          <div class="preview-mockup">
+            <div class="mockup-bar"><span></span><span></span><span></span></div>
+            <div class="mockup-content">
+              <div class="mock-header"></div>
+              <div class="mock-body">
+                <div class="mock-block blue"></div>
+                <div class="mock-block short"></div>
+                <div class="mock-block"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="port-info">
+          <div class="port-cat cat-blue">🌐 Web Dev</div>
+          <h3>Company Profile — UMKM Kuliner</h3>
+          <p>Website company profile untuk usaha kuliner lokal, dengan menu, galeri, dan form pemesanan.</p>
+          <div class="port-tags"><span>HTML/CSS</span><span>JS</span><span>PHP</span></div>
+        </div>
+      </div>
+
+      <div class="port-card" data-cat="web">
+        <div class="port-preview web-preview2">
+          <div class="preview-mockup">
+            <div class="mockup-bar"><span></span><span></span><span></span></div>
+            <div class="mockup-content">
+              <div class="mock-header green"></div>
+              <div class="mock-grid">
+                <div class="mock-product"></div>
+                <div class="mock-product"></div>
+                <div class="mock-product"></div>
+                <div class="mock-product"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="port-info">
+          <div class="port-cat cat-blue">🌐 Web Dev</div>
+          <h3>Landing Page — Jasa Laundry</h3>
+          <p>Landing page modern untuk jasa laundry dengan sistem order online dan tracking pesanan.</p>
+          <div class="port-tags"><span>React</span><span>Tailwind</span><span>Laravel</span></div>
+        </div>
+      </div>
+
+      <div class="port-card" data-cat="web">
+        <div class="port-preview web-preview3">
+          <div class="preview-code">
+            <div class="pc-line"><span class="pc-blue">import</span> <span class="pc-white">App</span></div>
+            <div class="pc-line"><span class="pc-green">function</span> <span class="pc-yellow">render</span>()</div>
+            <div class="pc-line indent"><span class="pc-white">return</span> <span class="pc-red">&lt;main&gt;</span></div>
+            <div class="pc-line indent2"><span class="pc-red">&lt;Hero /&gt;</span></div>
+            <div class="pc-line indent"><span class="pc-red">&lt;/main&gt;</span></div>
+          </div>
+        </div>
+        <div class="port-info">
+          <div class="port-cat cat-blue">🌐 Web Dev</div>
+          <h3>Sistem Informasi — Skripsi</h3>
+          <p>Aplikasi web manajemen data untuk tugas akhir mahasiswa dengan fitur CRUD lengkap.</p>
+          <div class="port-tags"><span>Laravel</span><span>MySQL</span><span>Bootstrap</span></div>
+        </div>
+      </div>
+
+      <!-- PENTEST -->
+      <div class="port-card" data-cat="pentest">
+        <div class="port-preview pentest-preview">
+          <div class="pentest-terminal">
+            <p><span style="color:var(--pixel-green)">$</span> ./scan target.com</p>
+            <p><span style="color:var(--pixel-red)">[!]</span> SQLi found</p>
+            <p><span style="color:var(--pixel-yellow)">[*]</span> Testing XSS...</p>
+            <p><span style="color:var(--pixel-green)">[+]</span> Report done</p>
+          </div>
+        </div>
+        <div class="port-info">
+          <div class="port-cat cat-red">🔒 Pentest</div>
+          <h3>Pentest — Web E-Commerce</h3>
+          <p>Pengujian keamanan website toko online, ditemukan 3 critical vulnerability dan telah diperbaiki.</p>
+          <div class="port-tags"><span>OWASP</span><span>Burp Suite</span><span>SQLmap</span></div>
+        </div>
+      </div>
+
+      <!-- BOT -->
+      <div class="port-card" data-cat="bot">
+        <div class="port-preview bot-preview">
+          <div class="bot-chat-preview">
+            <div class="bcp-msg bot">🤖 Halo! Menu:</div>
+            <div class="bcp-msg bot">/order /cek /info</div>
+            <div class="bcp-msg user">👤 /order</div>
+            <div class="bcp-msg bot">🤖 Masukkan produk:</div>
+          </div>
+        </div>
+        <div class="port-info">
+          <div class="port-cat cat-green">🤖 Bot</div>
+          <h3>Telegram Bot — Toko Online</h3>
+          <p>Bot Telegram untuk toko online dengan fitur katalog, order, pembayaran, dan notifikasi admin.</p>
+          <div class="port-tags"><span>Python</span><span>Telegram API</span><span>MySQL</span></div>
+        </div>
+      </div>
+
+      <div class="port-card" data-cat="bot">
+        <div class="port-preview bot-preview2">
+          <div class="bot-chat-preview">
+            <div class="bcp-msg bot" style="border-color:#5865f2">🎮 Welcome to server!</div>
+            <div class="bcp-msg bot" style="border-color:#5865f2">React for roles ⬇️</div>
+            <div class="bcp-msg user">👤 ✅</div>
+            <div class="bcp-msg bot" style="border-color:#5865f2">🤖 Role assigned!</div>
+          </div>
+        </div>
+        <div class="port-info">
+          <div class="port-cat cat-purple">🤖 Bot</div>
+          <h3>Discord Bot — Komunitas Gaming</h3>
+          <p>Bot Discord dengan fitur welcome, role reaction, leveling system, dan moderasi otomatis.</p>
+          <div class="port-tags"><span>discord.py</span><span>Python</span><span>SQLite</span></div>
+        </div>
+      </div>
+
+      <!-- DISCORD -->
+      <div class="port-card" data-cat="discord">
+        <div class="port-preview discord-preview-card">
+          <div class="dc-card-content">
+            <div class="dc-c-cat">📢 ANNOUNCEMENTS</div>
+            <div class="dc-c-ch"># welcome</div>
+            <div class="dc-c-ch"># rules</div>
+            <div class="dc-c-cat">💬 COMMUNITY</div>
+            <div class="dc-c-ch active"># general</div>
+          </div>
+        </div>
+        <div class="port-info">
+          <div class="port-cat cat-yellow">🎮 Discord</div>
+          <h3>Discord Setup — Komunitas Developer</h3>
+          <p>Setup server Discord untuk komunitas 500+ member dengan sistem ticket, role, dan bot moderasi.</p>
+          <div class="port-tags"><span>Discord</span><span>MEE6</span><span>Carl-bot</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMING SOON NOTE -->
+    <div class="portfolio-note">
+      <span>⭐</span>
+      <p>Portfolio terus diperbarui! <a href="contact.html">Hubungi kami</a> untuk melihat lebih banyak karya terbaru.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-coins"><span>⭐</span><span>⭐</span><span>⭐</span></div>
+    <h2>WANT YOUR <span class="accent">PROJECT HERE?</span></h2>
+    <p>Jadilah klien berikutnya dan wujudkan ide digitalmu bersama kami!</p>
+    <div class="cta-btns">
+      <a href="contact.html" class="btn-pixel btn-primary">📞 Mulai Project ▶</a>
+      <a href="services.html" class="btn-pixel btn-secondary">⚔️ Lihat Jasa ▶</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-logo">30CENG<span class="accent">.SRV</span></div>
+    <p class="footer-tagline">// Building Digital Worlds, One Pixel at a Time //</p>
+    <div class="footer-socials">
+      <a href="https://wa.me/6287726411406" target="_blank" class="social-btn">📱 WA</a>
+      <a href="https://t.me/iieellv" target="_blank" class="social-btn">✈️ TG</a>
+      <a href="https://instagram.com/ellteerp_" target="_blank" class="social-btn">📸 IG</a>
+      <a href="https://instagram.com/30ceng.srv" target="_blank" class="social-btn">📸 IG2</a>
+      <a href="#" class="social-btn">🎮 DC</a>
+    </div>
+    <p class="footer-copy">© 2025 30CENG.SRV — All Rights Reserved | Made with ❤️ & ☕</p>
+  </footer>
+
+  <script src="js/global.js"></script>
+  <script src="js/portfolio.js"></script>
+</body>
+</html>
