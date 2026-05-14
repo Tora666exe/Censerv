@@ -1,0 +1,442 @@
+/* ===== GLOBAL.CSS — Pixel Mario Bros Theme ===== */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+:root {
+  /* Mario Bright Palette */
+  --pixel-red: #e52222;
+  --pixel-blue: #1a6de0;
+  --pixel-green: #22b455;
+  --pixel-yellow: #f7c948;
+  --pixel-orange: #f5831f;
+  --pixel-purple: #8b3dff;
+  --pixel-cyan: #00d4ff;
+  --pixel-white: #ffffff;
+  --pixel-black: #1a0e00;
+
+  /* Mario World Colors */
+  --mario-sky: #5c94fc;       /* Classic Mario sky blue */
+  --mario-sky-light: #92b8ff; /* Lighter sky */
+  --mario-ground: #c84b0e;    /* Ground brick orange-brown */
+  --mario-ground-dark: #8b3008;
+  --mario-grass: #4caf1a;     /* Grass green */
+  --mario-grass-dark: #2d7a0a;
+  --mario-cloud: #ffffff;
+  --mario-brick: #c84b0e;
+  --mario-coin: #f7c948;
+  --mario-pipe: #22b455;
+  --mario-pipe-dark: #145e2f;
+
+  /* Section BGs (bright, light) */
+  --section-bg-1: #e8f4ff;    /* Light sky */
+  --section-bg-2: #fff9e6;    /* Warm cream */
+  --section-bg-3: #eafff0;    /* Light mint */
+  --section-bg-4: #fff0f0;    /* Light pink */
+  --section-text: #1a0e00;    /* Dark brown text */
+  --section-text-muted: #5a4030;
+
+  --pixel-dark: #2a1a08;
+  --pixel-darker: #1a0e00;
+
+  --font-pixel: 'Press Start 2P', monospace;
+  --font-vt: 'VT323', monospace;
+
+  --border-pixel: 3px solid var(--pixel-black);
+  --shadow-pixel: 4px 4px 0px rgba(0,0,0,0.4);
+  --shadow-glow-blue: 0 0 20px rgba(26,109,224,0.4);
+  --shadow-glow-red: 0 0 20px rgba(229,34,34,0.4);
+  --shadow-glow-green: 0 0 20px rgba(34,180,85,0.4);
+  --shadow-glow-yellow: 0 0 20px rgba(247,201,72,0.5);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-vt);
+  background-color: var(--mario-sky);
+  color: var(--section-text);
+  overflow-x: hidden;
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Crect x='0' y='0' width='8' height='8' fill='%23f7c948'/%3E%3Crect x='8' y='8' width='8' height='8' fill='%23f7c948'/%3E%3C/svg%3E"), auto;
+}
+
+/* Mario World Canvas — full scene */
+#pixelCanvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 32px;
+  background: var(--pixel-red);
+  border-bottom: 4px solid #8b0000;
+  box-shadow: 0 6px 0 #5a0000, 0 0 0 3px #ff6666 inset;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.pixel-char {
+  font-size: 20px;
+  animation: blink 1s step-end infinite;
+}
+
+.logo-text {
+  font-family: var(--font-pixel);
+  font-size: 14px;
+  color: var(--pixel-white);
+  letter-spacing: 1px;
+}
+
+.logo-text .accent {
+  color: var(--pixel-yellow);
+}
+
+.nav-links {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: var(--font-pixel);
+  font-size: 9px;
+  color: #fff8e1;
+  text-decoration: none;
+  padding: 8px 12px;
+  border: 2px solid transparent;
+  transition: all 0.1s steps(1);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--pixel-yellow);
+  border-color: var(--pixel-yellow);
+  background: rgba(247,201,72,0.2);
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.3);
+}
+
+.nav-cta {
+  background: var(--pixel-green) !important;
+  border-color: #145e2f !important;
+  color: white !important;
+  box-shadow: 3px 3px 0 #0a3a1a !important;
+}
+
+.nav-cta:hover {
+  transform: translate(-2px, -2px) !important;
+  box-shadow: 5px 5px 0 #0a3a1a !important;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 3px;
+  background: var(--pixel-yellow);
+  display: block;
+}
+
+/* ===== ACCENT ===== */
+.accent {
+  color: var(--pixel-yellow);
+}
+
+/* ===== BUTTONS ===== */
+.btn-pixel {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-pixel);
+  font-size: 9px;
+  padding: 14px 20px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.1s steps(1);
+  letter-spacing: 1px;
+  image-rendering: pixelated;
+}
+
+.btn-primary {
+  background: var(--pixel-red);
+  color: white;
+  box-shadow: 4px 4px 0 #8b0000, 8px 8px 0 rgba(0,0,0,0.3);
+  border: 3px solid #ff6666;
+}
+
+.btn-primary:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #8b0000, 10px 10px 0 rgba(0,0,0,0.3);
+  background: #ff3333;
+}
+
+.btn-primary:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 #8b0000;
+}
+
+.btn-secondary {
+  background: var(--pixel-blue);
+  color: white;
+  box-shadow: 4px 4px 0 #0a3a7a, 8px 8px 0 rgba(0,0,0,0.3);
+  border: 3px solid #5599ff;
+}
+
+.btn-secondary:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #0a3a7a, 10px 10px 0 rgba(0,0,0,0.3);
+}
+
+.btn-wa {
+  background: #25d366;
+  color: white;
+  box-shadow: 4px 4px 0 #128c3e;
+  border: 3px solid #5de8a0;
+}
+
+.btn-wa:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #128c3e;
+  background: #2ae870;
+}
+
+/* ===== SECTION HEADER ===== */
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-header h2 {
+  font-family: var(--font-pixel);
+  font-size: clamp(18px, 3vw, 28px);
+  color: var(--pixel-white);
+  margin-bottom: 12px;
+  text-shadow: 3px 3px 0 var(--pixel-black), var(--shadow-glow-blue);
+}
+
+.section-header p {
+  font-family: var(--font-vt);
+  font-size: 22px;
+  color: #aaa;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: var(--mario-ground-dark);
+  border-top: 6px solid var(--mario-brick);
+  box-shadow: 0 -4px 0 #5a1a00 inset;
+  padding: 40px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 6px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--mario-brick) 0px,
+    var(--mario-brick) 40px,
+    var(--mario-ground-dark) 40px,
+    var(--mario-ground-dark) 44px
+  );
+}
+
+.footer-logo {
+  font-family: var(--font-pixel);
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: var(--pixel-yellow);
+  text-shadow: 3px 3px 0 #5a0000;
+}
+
+.footer-tagline {
+  font-family: var(--font-vt);
+  font-size: 20px;
+  color: #ffccaa;
+  margin-bottom: 20px;
+}
+
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.social-btn {
+  font-family: var(--font-pixel);
+  font-size: 8px;
+  padding: 8px 14px;
+  border: 2px solid var(--pixel-yellow);
+  color: var(--pixel-yellow);
+  text-decoration: none;
+  transition: all 0.1s steps(1);
+}
+
+.social-btn:hover {
+  background: var(--pixel-yellow);
+  color: var(--pixel-black);
+  box-shadow: 3px 3px 0 #8b6500;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.footer-nav a {
+  font-family: var(--font-pixel);
+  font-size: 8px;
+  color: #ffddbb;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-nav a:hover {
+  color: var(--pixel-yellow);
+}
+
+.footer-copy {
+  font-family: var(--font-vt);
+  font-size: 16px;
+  color: #cc8866;
+}
+
+/* ===== PIXEL BORDER UTILITY ===== */
+.pixel-border {
+  border: 3px solid var(--pixel-black);
+  box-shadow: var(--shadow-pixel);
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--mario-sky); }
+::-webkit-scrollbar-thumb { background: var(--pixel-red); border: 2px solid #8b0000; }
+::-webkit-scrollbar-thumb:hover { background: #ff3333; }
+
+/* ===== ANIMATIONS ===== */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-80px); opacity: 0; }
+}
+
+@keyframes coinSpin {
+  0% { transform: scaleX(1); }
+  25% { transform: scaleX(0.2); }
+  50% { transform: scaleX(1); }
+  75% { transform: scaleX(0.2); }
+  100% { transform: scaleX(1); }
+}
+
+@keyframes cloudFloat {
+  0% { transform: translateX(-20px); }
+  50% { transform: translateX(20px); }
+  100% { transform: translateX(-20px); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes pixelGlow {
+  0%, 100% { text-shadow: 2px 2px 0 #000, 0 0 10px currentColor; }
+  50% { text-shadow: 2px 2px 0 #000, 0 0 25px currentColor, 0 0 50px currentColor; }
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-60px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(60px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes scanline {
+  0% { top: -5%; }
+  100% { top: 105%; }
+}
+
+@keyframes glitch {
+  0% { clip-path: inset(0 0 95% 0); transform: translate(-3px, 0); }
+  20% { clip-path: inset(60% 0 30% 0); transform: translate(3px, 0); }
+  40% { clip-path: inset(30% 0 60% 0); transform: translate(-3px, 0); color: var(--pixel-cyan); }
+  60% { clip-path: inset(80% 0 10% 0); transform: translate(3px, 0); }
+  80% { clip-path: inset(10% 0 80% 0); transform: translate(-3px, 0); color: var(--pixel-red); }
+  100% { clip-path: inset(95% 0 0% 0); transform: translate(0); }
+}
+
+/* ===== PIXEL BORDER UTILITY ===== */
+.pixel-border {
+  border: 3px solid var(--pixel-white);
+  box-shadow: var(--shadow-pixel);
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar { width: 8px; }
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .navbar { padding: 10px 16px; }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0; right: 0;
+    background: var(--pixel-red);
+    border-bottom: 4px solid #8b0000;
+    padding: 16px;
+    gap: 4px;
+  }
+
+  .nav-links.open { display: flex; }
+
+  .hamburger { display: flex; }
+}
